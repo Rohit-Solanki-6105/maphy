@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef, useState } from "react";
 import Desmos from "desmos";
 // import { Button } from "./button";

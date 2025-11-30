@@ -5,7 +5,7 @@ import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import Sidebar from "./Sidebar";
 import Markdown from "../../components/ui/markdown";
-import GraphingCalculator from "@/components/ui/GraphingCalculator";
+// import GraphingCalculator from "@/components/ui/GraphingCalculator";
 // import GraphingCalculator from "../../components/ui/GraphingCalculator";
 import FileUpload from "../../components/ui/FileUpload";
 import {
@@ -18,7 +18,12 @@ import {
 } from "@/components/ui/dialog"
 import { Send } from "lucide-react";
 import { Popover, PopoverTrigger, PopoverContent } from "../../components/ui/popover";
+import dynamic from "next/dynamic";
 
+const GraphingCalculator = dynamic(
+  () => import("@/components/ui/GraphingCalculator"),
+  { ssr: false }
+);
 export default function ChatPage() {
   const [chatSessionId, setChatSessionId] = useState<string | null>(null);
   const [messages, setMessages] = useState<any[]>([]);
