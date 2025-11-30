@@ -21,7 +21,11 @@ Maphy is a personal AI chat app built with Next.js, Prisma, shadcn/ui, and Gemin
    npm install
    ```
 3. Set up environment variables:
-   - Copy `.env.example` to `.env` and fill in your Gemini API key and database credentials.
+   ```npm
+   DATABASE_URL="postgresql://localhost:5432/maphy?schema=public"
+   GEMINI_API_KEY="key-here"
+   PRISMA_CLIENT_ENGINE_TYPE=library
+   ```
 4. Run database migrations:
    ```sh
    npx prisma migrate dev
